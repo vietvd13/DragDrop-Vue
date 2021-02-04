@@ -1,6 +1,8 @@
 # using-drag-drop
 
-<img src="./src/assets/demo.png" align="center" alt="DragDrop-Vue">
+<div align="center">
+    <img src="./src/assets/demo.png" align="center" alt="DragDrop-Vue">
+</div>
 
 ## Project setup
 ```
