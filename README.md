@@ -1,5 +1,7 @@
 # using-drag-drop
 
+<img src="./src/assets/demo.png" align="center" alt="DragDrop-Vue">
+
 ## Project setup
 ```
 npm install
