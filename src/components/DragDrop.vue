@@ -43,7 +43,8 @@ export default {
             return {
                 animation: 150,
                 group: 'list',
-                handle: ".handle"
+                handle: ".handle",
+                ghostClass: "ghost"
             };
         }
     },
@@ -214,6 +215,10 @@ export default {
         justify-content: center;
         align-items: center;
         color: #333;
+    }
+
+    .ghost {
+        opacity: 0.5;
     }
 
 </style>
