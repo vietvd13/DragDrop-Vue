@@ -1,5 +1,7 @@
+// vue.config.js file to be place in the root of your repository
+
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-      ? '/DragDrop-Vue/'
-      : '/'
-  }
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/DragDrop-VueJS/'
+    : '/'
+}

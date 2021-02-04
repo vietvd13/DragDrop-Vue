@@ -1,5 +1,7 @@
 # using-drag-drop
 
+<p>Link Demo: <a href="https://vietvd13.github.io/DragDrop-VueJS/" target="_blank">https://vietvd13.github.io/DragDrop-VueJS/</a></p>
+
 <div align="center">
     <img src="./src/assets/demo.png" align="center" alt="DragDrop-Vue">
 </div>
