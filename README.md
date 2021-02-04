@@ -1,4 +1,4 @@
-# using-drag-drop
+# DragDrop-Vue
 
 <p>Link Demo: <a href="https://vietvd13.github.io/DragDrop-VueJS/" target="_blank">https://vietvd13.github.io/DragDrop-VueJS/</a></p>
 
@@ -28,4 +28,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# DragDrop-Vue
