@@ -5,13 +5,14 @@
             <draggable
                 :list="list"
                 v-bind="dragOptions"
+                @change="isListChange()"
             >
                 <div v-for="(item, index) in list" :key="item.position" class="item">
                     <div class="zone-drag handle">
-                        <button class="item--drag" @click="dragItem"> Drag </button>
+                        <button class="item--drag"> Drag </button>
                     </div>
                     <div class="zone-input">
-                        <input type="text" :value="item.text" class="item--input">
+                        <input type="text" v-model="item.text" class="item--input" placeholder="Enter anything....">
                     </div>
                     <div class="zone-delete">
                         <button class="item--delete" @click="deleteItem(index)"> Delete </button>
@@ -26,6 +27,13 @@
         <div>
             <button class="item--push" @click="addItem()"> + </button>
         </div>
+
+        <div class="preview-data">
+            <p v-for="item in list" :key="item.position">
+                {{item}}
+            </p>
+        </div>
+
     </div>
   </div>
 </template>
@@ -72,14 +80,7 @@ export default {
     },
     methods: {
         addItem() {
-            var length = this.list.length;
-            var i = 0;
-
-            for (i; i < length; i++) {
-                this.list[i].position = i + 1;
-            }
-
-            if (length === 0) {
+            if (this.list.length === 0) {
                 var newItem = {
                     text: '',
                     position: 1
@@ -87,6 +88,11 @@ export default {
 
                 this.list.push(newItem);
             } else {
+
+                for (var i = 0; i < this.list.length; i++) {
+                    this.list[i].position = i + 1;
+                }
+
                 var newItems = {
                     text: '',
                     position: this.list.length + 1
@@ -98,13 +104,16 @@ export default {
 
         deleteItem(position) {
             this.list.splice(position, 1);
+
+            for (var i = 0; i < this.list.length; i++) {
+                this.list[i].position = i + 1;
+            }
         },
 
-        dragItem() {
-            const list = document.getElementById('list-item');
-
-            console.log(list);
-                
+        isListChange() {
+            for (var i = 0; i < this.list.length; i++) {
+                this.list[i].position = i + 1;
+            }
         }
     }
 }
@@ -219,6 +228,16 @@ export default {
 
     .ghost {
         opacity: 0.5;
+    }
+
+    .preview-data {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .preview-data > p {
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
 </style>
